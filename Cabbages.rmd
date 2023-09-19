@@ -1,6 +1,6 @@
 ---
 title: "Cabbages"
-author: "leis"
+author: "leia"
 date: "9-13-23"
 output:
   html_document:
@@ -9,8 +9,12 @@ output:
 
 ```{r include=FALSE,echo=FALSE}
 require(tidyverse)
-require(tigerstats)
+require(tigerstats)---
 require(MASS)
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+
 veggy <- cabbages
 ```
 
@@ -27,19 +31,57 @@ $H_A$: there is a difference in the vitaminc c content of cabbages based pn cult
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
-# Results
 
+vitammin c content is a numerical variable cultivation method 
+
+```{r}
+data = veggy 
+
+```
+
+
+
+# Results
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ## Descriptive Results
 
 ### Graphical Descriptive Results
 
-<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+<!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!--> 
+
+```{r}
+# create a boxplot to visualize the data
+ggplot(data= veggy, aes(x = Cult, y = VitC)) +
+  geom_boxplot()+ 
+  labs(
+    title = "Boxplot of vitc by cult",
+    x = "Cult",
+    y = "VitC"
+  )     
+```
+
+
+the plot shows that the line did roughly 15 and the skills guys did roughly 47 in 2 minutes.   
 
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+# Calculate summary statistics 
+summary_stats <- data %>%
+  group_by(Cult) %>%
+  summarise (
+    Mean = mean(VitC),
+    Median = median(VitC), 
+    SD = sd (VitC)
+) 
+
+summary_stats 
+```
+
+
 
 ## Inferential Results
 
