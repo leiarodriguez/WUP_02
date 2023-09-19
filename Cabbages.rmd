@@ -21,6 +21,7 @@ veggy <- cabbages
 # Introduction
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
+ 
  The cabbages data from the MASS package is loaded into a dataframe called veggy. Complete this report by answering the following two questions  
  
 ### Is there a difference in average VitC between c39 and c52 cultivation methods?  
@@ -100,3 +101,5 @@ the p value is less than 0.05 so we reject the null hypothesis
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
+the original question is there a difference in average VitC between c39 and c52 cultivation methods? 
+in conclusion the p value of the t-test was less than 0.05 so we reject the null hypothesis there is a difference, the c52 was better.  
